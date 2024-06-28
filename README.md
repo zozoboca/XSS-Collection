@@ -717,8 +717,8 @@ wbr
 xmp
 ````
 # SRC
-https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
-https://gist.github.com/xsuperbug/1aff5c1d5ddbfefb035f33dd9c8e8a72
-https://netsec.expert/posts/xss-in-2021/#double-encoding
-https://github.com/cujanovic/Markdown-XSS-Payloads/
+https://portswigger.net/web-security/cross-site-scripting/cheat-sheet \
+https://gist.github.com/xsuperbug/1aff5c1d5ddbfefb035f33dd9c8e8a72 \
+https://netsec.expert/posts/xss-in-2021/#double-encoding \
+https://github.com/cujanovic/Markdown-XSS-Payloads/ \
 https://www.hahwul.com/cullinan/xss/
